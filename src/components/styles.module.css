@@ -1,0 +1,36 @@
+.miniTitle{
+    color: rgb(0, 183, 255);
+    margin-bottom: 10px;
+}
+
+.generalInfo{
+    margin: 30px;
+}
+
+.divPart{
+    margin-bottom: 30px;
+}
+
+/* .bmiForm{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    min-width: 800px;
+} */
+
+/* .App{
+    
+} */
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputGroup{
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
