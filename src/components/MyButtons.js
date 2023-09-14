@@ -1,10 +1,8 @@
 import React from 'react'
-import styles from '.styles.module.css/';
+import styles from './styles.module.css'
 
-function MyButtons() {
+export default function MyButtons({type, text}) {
   return (
-    <div>MyButtons</div>
+    <button type={`submit ${styles[type]}`} className={`btn ${styles[type]}`}>{text}</button>
   )
 }
-
-export default MyButtons

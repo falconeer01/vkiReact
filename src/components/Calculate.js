@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
 import { useNavigate } from 'react-router-dom';
+import MyButtons from './MyButtons';
 
 function Calculate({ updateUserValues }) {
   const [bmi, setBmi] = useState(0);
@@ -56,9 +57,11 @@ function Calculate({ updateUserValues }) {
 
         <br /><br />
 
-        <button type="submit" className="btn btn-dark mb-3">
+        {/* <button type="submit" className="btn btn-dark mb-3">
           Calculate BMI
-        </button>
+        </button> */}
+
+        <MyButtons type={'btnDodger'} text={'Calculate BMI'} />
 
       </form>
     </div>
