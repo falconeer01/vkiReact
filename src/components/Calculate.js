@@ -1,56 +1,66 @@
 import React, { useEffect, useState } from 'react';
 import styles from './styles.module.css';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-function Calculate() {
+function Calculate({ updateUserValues }) {
   const [bmi, setBmi] = useState(0);
   const [userWeight, setUserWeight] = useState(0);
   const [userHeight, setUserHeight] = useState(0);
+
+  const navigation = useNavigate();
 
   useEffect(() => {
     localStorage.setItem('bmi', bmi);
   }, [bmi]);
 
-  const bmiCalc = () => {
-    const weight = document.querySelector('#wInput').value;
-    const height = document.querySelector('#hInput').value;
+  const setValues = (e) => {
+    const { name, value } = e.target;
 
-    setUserWeight(weight);
-    setUserHeight(height);
+    if (name === 'wInput') {
+      setUserWeight(value);
+    } else if (name === 'hInput') {
+      setUserHeight(value);
+    }
+  }
 
-    const heightInMeters = height / 100;
-    const calculatedBMI = (weight / (heightInMeters * heightInMeters)).toFixed(1);
+  const bmiCalc = (e) => {
+    e.preventDefault();
+
+    const heightInMeters = userHeight / 100;
+    const calculatedBMI = (userWeight / (heightInMeters * heightInMeters)).toFixed(1);
+
     setBmi(calculatedBMI);
 
-    console.log(userWeight);
-    console.log(userHeight);
-    console.log(calculatedBMI);
+    console.log(userWeight, userHeight);
+    console.log("çalıştı");
+
+    updateUserValues(userWeight, userHeight);
+
+    navigation(`/result/w=${userWeight};h=${userHeight}`);
   }
 
   return (
     <div className={styles.container}>
-      <form className={styles.bmiForm}>
+      <form className={styles.bmiForm} onSubmit={(e) => bmiCalc(e)}>
         <div className={styles.inputGroup}>
             <label htmlFor="wInput">Weight:</label>
-            <input type='number' name='wInput' id='wInput' />
+            <input type='number' name='wInput' id='wInput' onChange={(e) => setValues(e)}/>
         </div>
 
         <br /><br />
 
         <div className={styles.inputGroup}>
             <label htmlFor="hInput">Height (cm):</label>
-            <input type='number' name='hInput' id='hInput' />
+            <input type='number' name='hInput' id='hInput' onChange={(e) => setValues(e)}/>
         </div>
 
         <br /><br />
 
+        <button type="submit" className="btn btn-dark mb-3">
+          Calculate BMI
+        </button>
+
       </form>
-
-      <button type="button" className="btn btn-dark mb-3" onClick={() => bmiCalc()}>Calculate BMI</button>
-
-      <h1 className='mb-3'>BMI: {bmi}</h1>
-
-      <p>To learn more about your BMI result switch to result panel from the navbar above.</p>
     </div>
   );
 }

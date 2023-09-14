@@ -11,12 +11,9 @@
     margin-bottom: 30px;
 }
 
-/* .bmiForm{
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    min-width: 800px;
-} */
+.bmiForm{
+    text-align: center;
+}
 
 /* .App{
     
@@ -33,4 +30,9 @@
     display: flex;
     justify-content: space-between;
     width: 300px;
+}
+
+.anchor{
+    color: white;
+    text-decoration: none;
 }

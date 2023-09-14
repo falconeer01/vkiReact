@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import styles from './styles.module.css'
 import { useEffect } from 'react';
 
-function Result() {
-  const [bmiValue, setBmiValue] = useState();
+function Result(props) {
+  const [bmiValue, setBmiValue] = useState(0);
 
   const [bmiInfo, setBmiInfo] = useState('Unknown');
 
   useEffect(() => {
-    const storedBmi = localStorage.getItem('bmi');
-    setBmiValue(storedBmi);
+    setBmiValue(props.bmi);
 
     const bmiMessage = () => {
       if(bmiValue < 18.5){
@@ -30,7 +29,7 @@ function Result() {
     }
 
     bmiMessage();
-  }, [localStorage, bmiValue]);
+  }, [props.bmi, bmiValue]);
 
   return (
     <div className={styles.container}>
