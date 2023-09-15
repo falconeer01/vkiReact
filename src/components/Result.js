@@ -1,57 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import styles from './styles.module.css'
+import styles from './styles.module.css';
+import dl2 from './DL2.json';
 
 function Result(props) {
-  const arr = [
-    {
-        "state": "below ideal",
-        "breakfast": "Oatmeal with fresh fruits",
-        "lunch": "Grilled chicken breast with vegetables",
-        "dinner": "Salmon with steamed broccoli"
-    },
-
-    {
-        "state": "ideal",
-        "breakfast": "Oatmeal with milk and nuts",
-        "lunch": "Chicken salad",
-        "dinner": "Whole wheat pasta with grilled vegetables"
-    },
-
-    {
-        "state": "above ideal",
-        "breakfast": "Yogurt with fresh fruit",
-        "lunch": "Chicken sandwich with green salad",
-        "dinner": "Grilled turkey breast with brown rice"
-    },
-        
-    {
-        "state": "obese",
-        "breakfast": "Whole-grain toast with peanut butter and a banana",
-        "lunch": "Tuna salad",
-        "dinner": "Grilled salmon with brown bulgur"
-    },
-
-    {
-        "state": "morbid obese",
-        "breakfast": "Cottage cheese with sliced green apples",
-        "lunch": "Vegetable quinoa pilaf",
-        "dinner": "Baked chicken breast with grilled vegetables"
-    }
-];
-
   const [bmiValue, setBmiValue] = useState(0);
 
   const [bmiInfo, setBmiInfo] = useState('Unknown');
 
   const [dietListInfo, setDietListInfo] = useState([]);
-
-  // useEffect(() => {
-  //   import('./DL2.json')
-  //   .then(data => {setDietListInfo(data)})
-  //   .catch((e) => console.error(e))
-
-    
-  // }, [props.bmi]);
 
   useEffect(() => {
     const bmiMessage = () => {
@@ -91,7 +47,7 @@ function Result(props) {
           <h4>Here's an ideal diet list for you to get healtier:</h4>
           <ul>
             {
-              arr
+              dl2
                 .filter((info) => info.state === dietListInfo)
                 .map((filteredInfo, key) => (
                   <div key={key}>

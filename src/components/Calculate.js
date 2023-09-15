@@ -57,10 +57,6 @@ function Calculate({ updateUserValues }) {
 
         <br /><br />
 
-        {/* <button type="submit" className="btn btn-dark mb-3">
-          Calculate BMI
-        </button> */}
-
         <MyButtons type={'btnDodger'} text={'Calculate BMI'} />
 
       </form>
