@@ -49,3 +49,7 @@
     background-color: white;
     color: dodgerblue;
 }
+
+li::marker{
+    color: dodgerblue;
+}

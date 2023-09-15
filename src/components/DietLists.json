@@ -4,16 +4,19 @@
       "lunch": "Grilled chicken breast with vegetables",
       "dinner": "Salmon with steamed broccoli"
     },
+
     "ideal": {
       "breakfast": "Oatmeal with milk and nuts",
       "lunch": "Chicken salad",
       "dinner": "Whole wheat pasta with grilled vegetables"
     },
+
     "aboveIdeal": {
       "breakfast": "Yogurt with fresh fruit",
       "lunch": "Chicken sandwich with green salad",
       "dinner": "Grilled turkey breast with brown rice"
     },
+    
     "obese": {
       "breakfast": "Whole-grain toast with peanut butter and a banana",
       "lunch": "Tuna salad",

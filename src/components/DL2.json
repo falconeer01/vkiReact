@@ -1,0 +1,36 @@
+[
+    {
+        "state": "below ideal",
+        "breakfast": "Oatmeal with fresh fruits",
+        "lunch": "Grilled chicken breast with vegetables",
+        "dinner": "Salmon with steamed broccoli"
+    },
+
+    {
+        "state": "ideal",
+        "breakfast": "Oatmeal with milk and nuts",
+        "lunch": "Chicken salad",
+        "dinner": "Whole wheat pasta with grilled vegetables"
+    },
+
+    {
+        "state": "above ideal",
+        "breakfast": "Yogurt with fresh fruit",
+        "lunch": "Chicken sandwich with green salad",
+        "dinner": "Grilled turkey breast with brown rice"
+    },
+        
+    {
+        "state": "obese",
+        "breakfast": "Whole-grain toast with peanut butter and a banana",
+        "lunch": "Tuna salad",
+        "dinner": "Grilled salmon with brown bulgur"
+    },
+
+    {
+        "state": "morbid obese",
+        "breakfast": "Cottage cheese with sliced green apples",
+        "lunch": "Vegetable quinoa pilaf",
+        "dinner": "Baked chicken breast with grilled vegetables"
+    }
+]
